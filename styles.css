@@ -11,15 +11,15 @@
 
 body {
     font-family: Georgia, "Sekuya", serif;
-    background-color: #2C677D;
-    color: #7D412C;
+    background-color: #3C5166;
+    color: #766513C;
     margin: 0;
     padding: 0 20px 40px 20px;
 }
 
 /* the menu at the top of every page */
 nav {
-    background-color: #2C677D;
+    background-color: #3C3C66;
     padding: 14px;
     text-align: center;
 }
@@ -39,7 +39,7 @@ nav a {
 }
 
 h1 {
-    color: #2C677D;
+    color: #513C66;
     text-align: center;
     font-size: 40px;
 }
@@ -54,6 +54,6 @@ p {
 footer {
     text-align: center;
     font-size: 14px;
-    color: #2C677D;
+    color: #51663C;
     margin-top: 40px;
 }
