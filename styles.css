@@ -19,7 +19,7 @@ body {
 
 /* the menu at the top of every page */
 nav {
-    background-color: #2b5d8c;
+    background-color: #2C677D;
     padding: 14px;
     text-align: center;
 }
@@ -39,7 +39,7 @@ nav a {
 }
 
 h1 {
-    color: #2b5d8c;
+    color: #2C677D;
     text-align: center;
     font-size: 40px;
 }
@@ -54,6 +54,6 @@ p {
 footer {
     text-align: center;
     font-size: 14px;
-    color: #777777;
+    color: #2C677D;
     margin-top: 40px;
 }
