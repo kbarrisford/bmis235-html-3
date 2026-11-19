@@ -36,7 +36,392 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class="showcase">
+<!-- HTML: Interactive crabbing topic cards and information panel -->
+<div class="showcase-crabbing">
+  <div class="showcase-crabbing-header">
+    <span class="showcase-crabbing-eyebrow">NORTHERN CALIFORNIA • 2026–2027</span>
+    <div class="showcase-crabbing-title">Explore the Crab Season</div>
+    <div class="showcase-crabbing-intro">
+      Learn the locations, techniques, conditions, and regulations that
+      make a successful crabbing trip.
+    </div>
+  </div>
+
+  <div class="showcase-crabbing-layout">
+    <div class="showcase-crabbing-topics">
+      <button class="showcase-crabbing-topic active" data-topic="species">
+        <span class="showcase-crabbing-icon">🦀</span>
+        <span>Target Species</span>
+        <span class="showcase-crabbing-arrow">↗</span>
+      </button>
+      <button class="showcase-crabbing-topic" data-topic="locations">
+        <span class="showcase-crabbing-icon">🌊</span>
+        <span>Crabbing Locations</span>
+        <span class="showcase-crabbing-arrow">↗</span>
+      </button>
+      <button class="showcase-crabbing-topic" data-topic="gear">
+        <span class="showcase-crabbing-icon">🎣</span>
+        <span>Gear & Techniques</span>
+        <span class="showcase-crabbing-arrow">↗</span>
+      </button>
+      <button class="showcase-crabbing-topic" data-topic="weather">
+        <span class="showcase-crabbing-icon">🌤️</span>
+        <span>Weather & Tides</span>
+        <span class="showcase-crabbing-arrow">↗</span>
+      </button>
+      <button class="showcase-crabbing-topic" data-topic="regulations">
+        <span class="showcase-crabbing-icon">📋</span>
+        <span>Rules & Regulations</span>
+        <span class="showcase-crabbing-arrow">↗</span>
+      </button>
+    </div>
+
+    <div class="showcase-crabbing-detail" aria-live="polite">
+      <div class="showcase-crabbing-detail-top">
+        <span class="showcase-crabbing-number">01 / 05</span>
+        <span class="showcase-crabbing-tag">FIELD GUIDE</span>
+      </div>
+      <div class="showcase-crabbing-detail-icon" id="showcaseCrabIcon">🦀</div>
+      <div class="showcase-crabbing-detail-title" id="showcaseCrabTitle">
+        Target Species
+      </div>
+      <p class="showcase-crabbing-detail-text" id="showcaseCrabText">
+        Discover the crab species found along the Northern California coast,
+        including Dungeness crab and rock crab. Learn how to identify your catch
+        and understand seasonal patterns.
+      </p>
+      <div class="showcase-crabbing-detail-bottom">
+        <span id="showcaseCrabSubtitle">KNOW WHAT YOU'RE CATCHING</span>
+        <span>✦ NORCAL CRABBING</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="showcase-crabbing-footer">
+    <span>PLAN SMART. CRAB RESPONSIBLY.</span>
+    <span>YOUR NORCAL COASTAL GUIDE</span>
+  </div>
+</div>
+
+<style>
+/* CSS: Keeps the design contained within the showcase graphic */
+.showcase .showcase-crabbing,
+.showcase-crabbing {
+  --crab-main: #3C5166;
+  --crab-accent: #76513C;
+  --crab-light: #F3F1EC;
+  --crab-white: #FFFFFF;
+  --crab-muted: #687783;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+  background: var(--crab-light);
+  border: 1px solid #D9D9D3;
+  border-radius: 15px;
+  color: var(--crab-main);
+  font-family: "Bahnschrift Light", Bahnschrift, Arial, sans-serif;
+  overflow: hidden;
+}
+
+.showcase .showcase-crabbing *,
+.showcase-crabbing * {
+  box-sizing: border-box;
+}
+
+.showcase .showcase-crabbing-header,
+.showcase-crabbing-header {
+  margin-bottom: 19px;
+}
+
+.showcase .showcase-crabbing-eyebrow,
+.showcase-crabbing-eyebrow {
+  display: block;
+  color: var(--crab-accent);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.showcase .showcase-crabbing-title,
+.showcase-crabbing-title {
+  color: var(--crab-main);
+  font-size: clamp(23px, 4vw, 34px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 7px;
+}
+
+.showcase .showcase-crabbing-intro,
+.showcase-crabbing-intro {
+  color: var(--crab-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 540px;
+}
+
+.showcase .showcase-crabbing-layout,
+.showcase-crabbing-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 14px;
+}
+
+.showcase .showcase-crabbing-topics,
+.showcase-crabbing-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.showcase .showcase-crabbing-topic,
+.showcase-crabbing-topic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 51px;
+  padding: 9px 12px;
+  border: 1px solid #D8DAD8;
+  border-radius: 8px;
+  background: var(--crab-white);
+  color: var(--crab-main);
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.showcase .showcase-crabbing-topic:hover,
+.showcase-crabbing-topic:hover {
+  transform: translateX(3px);
+  border-color: var(--crab-accent);
+}
+
+.showcase .showcase-crabbing-topic.active,
+.showcase-crabbing-topic.active {
+  background: var(--crab-main);
+  color: var(--crab-white);
+  border-color: var(--crab-main);
+}
+
+.showcase .showcase-crabbing-icon,
+.showcase-crabbing-icon {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.showcase .showcase-crabbing-arrow,
+.showcase-crabbing-arrow {
+  margin-left: auto;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.showcase .showcase-crabbing-detail,
+.showcase-crabbing-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 285px;
+  padding: 19px;
+  border-radius: 10px;
+  background: var(--crab-main);
+  color: var(--crab-white);
+}
+
+.showcase .showcase-crabbing-detail-top,
+.showcase-crabbing-detail-top,
+.showcase .showcase-crabbing-detail-bottom,
+.showcase-crabbing-detail-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.showcase .showcase-crabbing-number,
+.showcase-crabbing-number,
+.showcase .showcase-crabbing-tag,
+.showcase-crabbing-tag {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #D9E0E5;
+}
+
+.showcase .showcase-crabbing-tag,
+.showcase-crabbing-tag {
+  border: 1px solid #AAB7C0;
+  padding: 4px 7px;
+  border-radius: 20px;
+}
+
+.showcase .showcase-crabbing-detail-icon,
+.showcase-crabbing-detail-icon {
+  font-size: 39px;
+  margin-top: 13px;
+}
+
+.showcase .showcase-crabbing-detail-title,
+.showcase-crabbing-detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 7px 0;
+  color: var(--crab-white);
+}
+
+.showcase .showcase-crabbing-detail-text,
+.showcase-crabbing-detail-text {
+  color: #E0E6EA;
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+.showcase .showcase-crabbing-detail-bottom,
+.showcase-crabbing-detail-bottom {
+  border-top: 1px solid #718394;
+  padding-top: 11px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #D9E0E5;
+}
+
+.showcase .showcase-crabbing-footer,
+.showcase-crabbing-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 11px;
+  border-top: 1px solid #D8DAD8;
+  color: var(--crab-muted);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+@media (max-width: 560px) {
+  .showcase .showcase-crabbing,
+  .showcase-crabbing {
+    padding: 16px;
+  }
+
+  .showcase .showcase-crabbing-layout,
+  .showcase-crabbing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase .showcase-crabbing-topics,
+  .showcase-crabbing-topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .showcase .showcase-crabbing-topic,
+  .showcase-crabbing-topic {
+    min-height: 54px;
+    padding: 8px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .showcase .showcase-crabbing-detail,
+  .showcase-crabbing-detail {
+    min-height: 225px;
+    padding: 15px;
+  }
+
+  .showcase .showcase-crabbing-detail-title,
+  .showcase-crabbing-detail-title {
+    font-size: 21px;
+  }
+
+  .showcase .showcase-crabbing-footer,
+  .showcase-crabbing-footer {
+    font-size: 8px;
+  }
+}
+</style>
+
+<script>
+/* JavaScript: Updates the featured information when a topic is selected */
+(function () {
+  const root = document.querySelector(".showcase .showcase-crabbing") ||
+               document.querySelector(".showcase-crabbing");
+
+  if (!root) return;
+
+  const topics = {
+    species: {
+      number: "01 / 05",
+      icon: "🦀",
+      title: "Target Species",
+      text: "Discover the crab species found along the Northern California coast, including Dungeness crab and rock crab. Learn how to identify your catch and understand seasonal patterns.",
+      subtitle: "KNOW WHAT YOU'RE CATCHING"
+    },
+    locations: {
+      number: "02 / 05",
+      icon: "🌊",
+      title: "Crabbing Locations",
+      text: "Explore popular coastal crabbing areas, bays, piers, and beaches. Learn how location, access, water depth, and local conditions can influence your trip.",
+      subtitle: "FIND YOUR NEXT CRABBING SPOT"
+    },
+    gear: {
+      number: "03 / 05",
+      icon: "🎣",
+      title: "Gear & Techniques",
+      text: "Explore crab traps, hoop nets, snares, bait, ropes, and essential equipment. Compare techniques for shore crabbing and crabbing from a boat.",
+      subtitle: "PREPARE BEFORE YOU GO"
+    },
+    weather: {
+      number: "04 / 05",
+      icon: "🌤️",
+      title: "Weather & Tides",
+      text: "Understand how tides, swell, wind, visibility, and changing coastal weather affect crabbing conditions. Learn to evaluate conditions before heading out.",
+      subtitle: "READ THE COASTAL CONDITIONS"
+    },
+    regulations: {
+      number: "05 / 05",
+      icon: "📋",
+      title: "Rules & Regulations",
+      text: "Review California fishing regulations, seasons, minimum size limits, daily bag limits, gear requirements, and marine protected areas. Always verify current rules before fishing.",
+      subtitle: "FISH LEGALLY AND RESPONSIBLY"
+    }
+  };
+
+  const buttons = root.querySelectorAll(".showcase-crabbing-topic");
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const data = topics[button.dataset.topic];
+      if (!data) return;
+
+      buttons.forEach(function (item) {
+        item.classList.remove("active");
+        item.setAttribute("aria-pressed", "false");
+      });
+
+      button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
+
+      root.querySelector("#showcaseCrabIcon").textContent = data.icon;
+      root.querySelector("#showcaseCrabTitle").textContent = data.title;
+      root.querySelector("#showcaseCrabText").textContent = data.text;
+      root.querySelector("#showcaseCrabSubtitle").textContent = data.subtitle;
+      root.querySelector(".showcase-crabbing-number").textContent = data.number;
+    });
+  });
+
+  buttons.forEach(function (button) {
+    button.setAttribute("aria-pressed", button.classList.contains("active") ? "true" : "false");
+  });
+})();
+</script>
+</div>
 
 <!-- Footer: fill in your name -->
 <footer>Built by Kyle Barrisford &middot; BMIS 235</footer>
